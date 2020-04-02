@@ -118,6 +118,14 @@ def removeEmptyMonths(data):
         data = data[start_ind:end_ind+1]
 
     return data
+
+# make all values str
+def makeAllStr(data):
+    for key in data.keys():
+        for item in data[key]:
+            item["downloads"] = str(item["downloads"])
+    
+    return data
 ### END UTILS ###
 
 # get historic bioconductor download stats for the package name
@@ -165,6 +173,8 @@ def getHistoricCranData(name, start_dates, end_dates):
         # get year, month from "start" value
         x["year"] = x["start"][:4]
         x["month"] = calendar.month_abbr[int(x["start"][5:7])]
+         # parse downloads to str for consistency
+        data["downloads"] = str(data["downloads"])
 
         # remove start, end, package
         del x["start"]
@@ -249,7 +259,7 @@ def getHistoricAnacData(name):
         data.append({
             "year": months[i][:4],
             "month": calendar.month_abbr[int(months[i][5:])],
-            "downloads":int(df.iloc[i].counts),
+            "downloads":df.iloc[i].counts,
         })
 
     return data
@@ -288,6 +298,15 @@ if __name__ == "__main__":
             data[name] = ret_data
         else:
             data[name] = []
+
+    # I'm running this once and commenting it out:
+    # I accidentally didn't keep the types constant - some values int, some str
+    # To keep them all str, I'm running this function to make all values str
+    # json_data = None
+    # with open("historic_data.json") as f:
+    #     json_data = json.load(f)
+
+    # data = makeAllStr(json_data)
 
     # writing json to file
     json_str = json.dumps(data)
