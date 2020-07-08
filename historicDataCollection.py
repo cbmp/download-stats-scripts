@@ -48,6 +48,25 @@ def readDownloadLinks():
                                         
         return package_dict
 
+def getNames():
+    path = "" + str(os.getcwd()) + "\\software.csv"
+    with open(path, encoding="utf8") as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        line_count = 0
+
+        # making a dict, formatL {name: url}
+        package_dict = {}
+        for row in csv_reader:
+            # header
+            if line_count == 0: 
+                line_count += 1
+
+            # body
+            package_dict[row["name"]] = row["lab"]
+                                        
+        return package_dict
+
+
 # get start and end dates of every month starting from start_year
 # format: yyyy-mm-dd
 def getStartEndDates(start_year):
@@ -126,6 +145,8 @@ def makeAllStr(data):
             item["downloads"] = str(item["downloads"])
     
     return data
+
+    
 ### END UTILS ###
 
 # get historic bioconductor download stats for the package name
@@ -181,7 +202,7 @@ def getHistoricCranData(name, start_dates, end_dates):
         del x["end"]
         del x["package"]
     
-    # remove empty months
+    # remove empty months because starting at certain year, may not be that month
     data = removeEmptyMonths(data)
 
     return data
@@ -266,52 +287,67 @@ def getHistoricAnacData(name):
 
 
 if __name__ == "__main__":
-    package_dict = readDownloadLinks()
-    data = {}
-    for name in package_dict:
-        if "bioconductor" in package_dict[name]:
-            # get data
-            ret_data = getHistoricBiocData(name)
-            data[name] = ret_data
+    # package_dict = readDownloadLinks()
+    # data = {}
+    # for name in package_dict:
+    #     if "bioconductor" in package_dict[name]:
+    #         # get data
+    #         ret_data = getHistoricBiocData(name)
+    #         data[name] = ret_data
 
-        elif "cran" in package_dict[name]:
-            # getting start and end dates
-            start_year = 2005 #TODO: change based on paul getting the year of each package
-            ret = getStartEndDates(start_year)
-            start_dates = ret["start"]
-            end_dates = ret["end"]
-            ret_data = getHistoricCranData(name, start_dates, end_dates)
-            data[name] = ret_data
+    #     elif "cran" in package_dict[name]:
+    #         # getting start and end dates
+    #         start_year = 2005 #TODO: change based on paul getting the year of each package
+    #         ret = getStartEndDates(start_year)
+    #         start_dates = ret["start"]
+    #         end_dates = ret["end"]
+    #         ret_data = getHistoricCranData(name, start_dates, end_dates)
+    #         data[name] = ret_data
 
-        elif "pypi" in package_dict[name]:
-            # IMPORTANT: we are allowed 1TB of querying per month.
-            #           each query is about 475GB
-            #           best bet is to run the sql queries manually
-            #           in the gbq console
-            #           but this one _might_ get the data as well
-            # ret_data = getHistoricPypiData(name, start_dates, end_dates)
-            ret_data = getManualHistoricPypiData(name)
-            data[name] = ret_data
+    #     elif "pypi" in package_dict[name]:
+    #         # IMPORTANT: we are allowed 1TB of querying per month.
+    #         #           each query is about 475GB
+    #         #           best bet is to run the sql queries manually
+    #         #           in the gbq console
+    #         #           but this one _might_ get the data as well
+    #         # ret_data = getHistoricPypiData(name, start_dates, end_dates)
+    #         ret_data = getManualHistoricPypiData(name)
+    #         data[name] = ret_data
 
-        elif "anaconda" in package_dict[name]:
-            ret_data = getHistoricAnacData(name)
-            data[name] = ret_data
-        else:
-            data[name] = []
+    #     elif "anaconda" in package_dict[name]:
+    #         ret_data = getHistoricAnacData(name)
+    #         data[name] = ret_data
+    #     else:
+    #         data[name] = []
 
     # I'm running this once and commenting it out:
     # I accidentally didn't keep the types constant - some values int, some str
     # To keep them all str, I'm running this function to make all values str
     # json_data = None
-    # with open("historic_data.json") as f:
+    # with open("new_data.json") as f:
     #     json_data = json.load(f)
 
     # data = makeAllStr(json_data)
 
+    # # writing json to file
+    # json_str = json.dumps(data)
+    # f = open("new_data.json", "w") #historic_
+    # f.write(json_str)
+    # f.close()
+
+    json_data = None
+    with open("new_data.json") as f:
+        json_data = json.load(f)
+
+    name_dict = getNames()
+    for i in range(0,len(json_data)):
+        json_data[i]['lab'] = name_dict[json_data[i]['name']]
+
     # writing json to file
-    json_str = json.dumps(data)
-    f = open("historic_data.json", "w")
+    json_str = json.dumps(json_data)
+    f = open("dlStats.json", "w") 
     f.write(json_str)
     f.close()
+
 
             
