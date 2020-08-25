@@ -20,6 +20,18 @@
 		"downloads": "171",
 		"year": "2020",
 		"month": "Mar"
+	}, {
+		"downloads": "0",
+		"year": "2020",
+		"month": "Apr"
+	}, {
+		"year": "2020",
+		"month": "May",
+		"downloads": "0"
+	}, {
+		"year": "2020",
+		"month": "Jun",
+		"downloads": "30"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -72,6 +84,10 @@
 		"downloads": "17",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "15",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -204,6 +220,10 @@
 		"downloads": "671",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "603",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -280,6 +300,10 @@
 		"downloads": "546",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "423",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -464,6 +488,10 @@
 		"year": "2020",
 		"month": "May",
 		"downloads": "350"
+	}, {
+		"year": "2020",
+		"month": "Jun",
+		"downloads": "420"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -836,6 +864,10 @@
 		"downloads": "3285",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "2600",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -896,6 +928,10 @@
 		"year": "2020",
 		"month": "May",
 		"downloads": "113"
+	}, {
+		"year": "2020",
+		"month": "Jun",
+		"downloads": "181"
 	}],
 	"lab": "Haibe-Kains"
 }, {
@@ -925,8 +961,8 @@
 		"downloads": "345",
 		"year": "2020"
 	}, {
-		"month": "May",
-		"downloads": "2761",
+		"month": "Jun",
+		"downloads": "4939",
 		"year": "2020"
 	}],
 	"lab": "Haibe-Kains"
@@ -1029,9 +1065,13 @@
 		"month": "Apr",
 		"downloads": "128"
 	}, {
-		"year": "2020",
-		"month": "May",
+		"year": "2020", 
+		"month": "May", 
 		"downloads": "157"
+	}, {
+		"year": "2020",
+		"month": "Jun",
+		"downloads": "210"
 	}],
 	"lab": "Hoffman"
 }, {
@@ -1176,6 +1216,10 @@
 		"year": "2020",
 		"month": "May",
 		"downloads": "426"
+	}, {
+		"year": "2020",
+		"month": "Jun",
+		"downloads": "463"
 	}],
 	"lab": "Hoffman"
 }, {
@@ -1324,6 +1368,10 @@
 		"year": "2020",
 		"month": "May",
 		"downloads": "431"
+	}, {
+		"year": "2020",
+		"month": "Jun",
+		"downloads": "573"
 	}],
 	"lab": "Hoffman"
 }, {
@@ -1377,8 +1425,8 @@
 		"downloads": "361",
 		"year": "2020"
 	}, {
-		"month": "May",
-		"downloads": "307",
+		"month": "Jun",
+		"downloads": "298",
 		"year": "2020"
 	}],
 	"lab": "Hoffman"
@@ -1392,6 +1440,10 @@
 		"downloads": "0",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "0",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Xu"
 }, {
@@ -1440,6 +1492,10 @@
 		"downloads": "582",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "408",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Xu"
 }, {
@@ -1472,6 +1528,10 @@
 		"downloads": "506",
 		"year": "2020",
 		"month": "May"
+	}, {
+		"downloads": "382",
+		"year": "2020",
+		"month": "Jun"
 	}],
 	"lab": "Xu"
 }, {

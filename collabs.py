@@ -7,6 +7,7 @@ def getPublications(data):
         name = item["name"]
         url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=$%s&retmax=800&retmode=json" % (item["query"])
         item["pubs"] = requests.get(url).json()['esearchresult']['idlist']
+        print(item["name"] + " " + str(len(item["pubs"])))
         time.sleep(2)
     return data
 

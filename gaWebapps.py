@@ -4,6 +4,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 import calendar
 import json
 
+# pip install --upgrade google-api-python-client 
+# pip install --upgrade oauth2client
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 KEY_FILE_LOCATION = 'ga-key-file.json'
@@ -63,9 +65,9 @@ def format_data(response, name):
 
 
 if __name__ == "__main__":
-    view_names = ['PharmacoDB', 'SYNERGxDB', 'ToxicoDB', 'XevaDB']
-    view_ids = ['154809134', '217887541', '217861980', '217840729']
-    start_dates = ['2017-07-01', '2020-05-01', '2020-05-01', '2020-05-01']
+    view_names = ['PharmacoDB', 'SYNERGxDB', 'ToxicoDB', 'XevaDB', 'Orcestra']
+    view_ids = ['154809134', '217887541', '217861980', '217840729', '217856753']
+    start_dates = ['2017-07-01', '2020-05-01', '2020-05-01', '2020-05-01', '2020-05-01']
     analytics = initialize_analyticsreporting()
     data = []
     for i in range(0,len(view_ids)):

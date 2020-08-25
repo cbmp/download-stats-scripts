@@ -1,223 +1,351 @@
-[{
-	"name": "PharmacoDB",
-	"stats": [{
-		"pageviews": "3935",
-		"users": "100",
-		"year": "2017",
-		"month": "Jul"
-	}, {
-		"pageviews": "7156",
-		"users": "315",
-		"year": "2017",
-		"month": "Aug"
-	}, {
-		"pageviews": "7964",
-		"users": "303",
-		"year": "2017",
-		"month": "Sep"
-	}, {
-		"pageviews": "4961",
-		"users": "310",
-		"year": "2017",
-		"month": "Oct"
-	}, {
-		"pageviews": "4555",
-		"users": "254",
-		"year": "2017",
-		"month": "Nov"
-	}, {
-		"pageviews": "2823",
-		"users": "191",
-		"year": "2017",
-		"month": "Dec"
-	}, {
-		"pageviews": "4235",
-		"users": "289",
-		"year": "2018",
-		"month": "Jan"
-	}, {
-		"pageviews": "2450",
-		"users": "229",
-		"year": "2018",
-		"month": "Feb"
-	}, {
-		"pageviews": "4006",
-		"users": "310",
-		"year": "2018",
-		"month": "Mar"
-	}, {
-		"pageviews": "4525",
-		"users": "393",
-		"year": "2018",
-		"month": "Apr"
-	}, {
-		"pageviews": "3873",
-		"users": "350",
-		"year": "2018",
-		"month": "May"
-	}, {
-		"pageviews": "4126",
-		"users": "353",
-		"year": "2018",
-		"month": "Jun"
-	}, {
-		"pageviews": "4668",
-		"users": "412",
-		"year": "2018",
-		"month": "Jul"
-	}, {
-		"pageviews": "6184",
-		"users": "345",
-		"year": "2018",
-		"month": "Aug"
-	}, {
-		"pageviews": "4342",
-		"users": "414",
-		"year": "2018",
-		"month": "Sep"
-	}, {
-		"pageviews": "5669",
-		"users": "444",
-		"year": "2018",
-		"month": "Oct"
-	}, {
-		"pageviews": "8328",
-		"users": "470",
-		"year": "2018",
-		"month": "Nov"
-	}, {
-		"pageviews": "3279",
-		"users": "340",
-		"year": "2018",
-		"month": "Dec"
-	}, {
-		"pageviews": "4791",
-		"users": "445",
-		"year": "2019",
-		"month": "Jan"
-	}, {
-		"pageviews": "3255",
-		"users": "415",
-		"year": "2019",
-		"month": "Feb"
-	}, {
-		"pageviews": "4287",
-		"users": "432",
-		"year": "2019",
-		"month": "Mar"
-	}, {
-		"pageviews": "4969",
-		"users": "438",
-		"year": "2019",
-		"month": "Apr"
-	}, {
-		"pageviews": "5391",
-		"users": "491",
-		"year": "2019",
-		"month": "May"
-	}, {
-		"pageviews": "4634",
-		"users": "482",
-		"year": "2019",
-		"month": "Jun"
-	}, {
-		"pageviews": "7362",
-		"users": "613",
-		"year": "2019",
-		"month": "Jul"
-	}, {
-		"pageviews": "4904",
-		"users": "469",
-		"year": "2019",
-		"month": "Aug"
-	}, {
-		"pageviews": "3857",
-		"users": "502",
-		"year": "2019",
-		"month": "Sep"
-	}, {
-		"pageviews": "3552",
-		"users": "525",
-		"year": "2019",
-		"month": "Oct"
-	}, {
-		"pageviews": "3794",
-		"users": "583",
-		"year": "2019",
-		"month": "Nov"
-	}, {
-		"pageviews": "3188",
-		"users": "463",
-		"year": "2019",
-		"month": "Dec"
-	}, {
-		"pageviews": "4008",
-		"users": "616",
-		"year": "2020",
-		"month": "Jan"
-	}, {
-		"pageviews": "4494",
-		"users": "410",
-		"year": "2020",
-		"month": "Feb"
-	}, {
-		"pageviews": "3713",
-		"users": "438",
-		"year": "2020",
-		"month": "Mar"
-	}, {
-		"pageviews": "4518",
-		"users": "544",
-		"year": "2020",
-		"month": "Apr"
-	}, {
-		"pageviews": "5302",
-		"users": "533",
-		"year": "2020",
-		"month": "May"
-	}, {
-		"pageviews": "833",
-		"users": "111",
-		"year": "2020",
-		"month": "Jun"
-	}]
-}, {
-	"name": "SYNERGxDB",
-	"stats": [{
-		"pageviews": "171",
-		"users": "73",
-		"year": "2020",
-		"month": "May"
-	}, {
-		"pageviews": "44",
-		"users": "17",
-		"year": "2020",
-		"month": "Jun"
-	}]
-}, {
-	"name": "ToxicoDB",
-	"stats": [{
-		"pageviews": "155",
-		"users": "85",
-		"year": "2020",
-		"month": "May"
-	}, {
-		"pageviews": "24",
-		"users": "15",
-		"year": "2020",
-		"month": "Jun"
-	}]
-}, {
-	"name": "XevaDB",
-	"stats": [{
-		"pageviews": "70",
-		"users": "24",
-		"year": "2020",
-		"month": "May"
-	}, {
-		"pageviews": "31",
-		"users": "12",
-		"year": "2020",
-		"month": "Jun"
-	}]
-}]
+[
+    {
+        "name": "PharmacoDB",
+        "stats": [
+            {
+                "pageviews": "3935",
+                "users": "100",
+                "year": "2017",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "7156",
+                "users": "315",
+                "year": "2017",
+                "month": "Aug"
+            },
+            {
+                "pageviews": "7964",
+                "users": "303",
+                "year": "2017",
+                "month": "Sep"
+            },
+            {
+                "pageviews": "4961",
+                "users": "310",
+                "year": "2017",
+                "month": "Oct"
+            },
+            {
+                "pageviews": "4555",
+                "users": "254",
+                "year": "2017",
+                "month": "Nov"
+            },
+            {
+                "pageviews": "2823",
+                "users": "191",
+                "year": "2017",
+                "month": "Dec"
+            },
+            {
+                "pageviews": "4235",
+                "users": "289",
+                "year": "2018",
+                "month": "Jan"
+            },
+            {
+                "pageviews": "2450",
+                "users": "229",
+                "year": "2018",
+                "month": "Feb"
+            },
+            {
+                "pageviews": "4006",
+                "users": "310",
+                "year": "2018",
+                "month": "Mar"
+            },
+            {
+                "pageviews": "4525",
+                "users": "393",
+                "year": "2018",
+                "month": "Apr"
+            },
+            {
+                "pageviews": "3873",
+                "users": "350",
+                "year": "2018",
+                "month": "May"
+            },
+            {
+                "pageviews": "4126",
+                "users": "353",
+                "year": "2018",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "4668",
+                "users": "412",
+                "year": "2018",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "6184",
+                "users": "345",
+                "year": "2018",
+                "month": "Aug"
+            },
+            {
+                "pageviews": "4342",
+                "users": "414",
+                "year": "2018",
+                "month": "Sep"
+            },
+            {
+                "pageviews": "5669",
+                "users": "444",
+                "year": "2018",
+                "month": "Oct"
+            },
+            {
+                "pageviews": "8328",
+                "users": "470",
+                "year": "2018",
+                "month": "Nov"
+            },
+            {
+                "pageviews": "3279",
+                "users": "340",
+                "year": "2018",
+                "month": "Dec"
+            },
+            {
+                "pageviews": "4791",
+                "users": "445",
+                "year": "2019",
+                "month": "Jan"
+            },
+            {
+                "pageviews": "3255",
+                "users": "415",
+                "year": "2019",
+                "month": "Feb"
+            },
+            {
+                "pageviews": "4287",
+                "users": "432",
+                "year": "2019",
+                "month": "Mar"
+            },
+            {
+                "pageviews": "4969",
+                "users": "438",
+                "year": "2019",
+                "month": "Apr"
+            },
+            {
+                "pageviews": "5391",
+                "users": "491",
+                "year": "2019",
+                "month": "May"
+            },
+            {
+                "pageviews": "4634",
+                "users": "482",
+                "year": "2019",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "7362",
+                "users": "613",
+                "year": "2019",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "4904",
+                "users": "469",
+                "year": "2019",
+                "month": "Aug"
+            },
+            {
+                "pageviews": "3857",
+                "users": "502",
+                "year": "2019",
+                "month": "Sep"
+            },
+            {
+                "pageviews": "3552",
+                "users": "525",
+                "year": "2019",
+                "month": "Oct"
+            },
+            {
+                "pageviews": "3794",
+                "users": "583",
+                "year": "2019",
+                "month": "Nov"
+            },
+            {
+                "pageviews": "3188",
+                "users": "463",
+                "year": "2019",
+                "month": "Dec"
+            },
+            {
+                "pageviews": "4008",
+                "users": "616",
+                "year": "2020",
+                "month": "Jan"
+            },
+            {
+                "pageviews": "4494",
+                "users": "410",
+                "year": "2020",
+                "month": "Feb"
+            },
+            {
+                "pageviews": "3713",
+                "users": "438",
+                "year": "2020",
+                "month": "Mar"
+            },
+            {
+                "pageviews": "4518",
+                "users": "544",
+                "year": "2020",
+                "month": "Apr"
+            },
+            {
+                "pageviews": "5302",
+                "users": "533",
+                "year": "2020",
+                "month": "May"
+            },
+            {
+                "pageviews": "6925",
+                "users": "458",
+                "year": "2020",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "4786",
+                "users": "475",
+                "year": "2020",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "902",
+                "users": "141",
+                "year": "2020",
+                "month": "Aug"
+            }
+        ]
+    },
+    {
+        "name": "SYNERGxDB",
+        "stats": [
+            {
+                "pageviews": "171",
+                "users": "73",
+                "year": "2020",
+                "month": "May"
+            },
+            {
+                "pageviews": "245",
+                "users": "113",
+                "year": "2020",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "166",
+                "users": "77",
+                "year": "2020",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "173",
+                "users": "32",
+                "year": "2020",
+                "month": "Aug"
+            }
+        ]
+    },
+    {
+        "name": "ToxicoDB",
+        "stats": [
+            {
+                "pageviews": "155",
+                "users": "85",
+                "year": "2020",
+                "month": "May"
+            },
+            {
+                "pageviews": "132",
+                "users": "73",
+                "year": "2020",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "198",
+                "users": "105",
+                "year": "2020",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "58",
+                "users": "36",
+                "year": "2020",
+                "month": "Aug"
+            }
+        ]
+    },
+    {
+        "name": "XevaDB",
+        "stats": [
+            {
+                "pageviews": "70",
+                "users": "24",
+                "year": "2020",
+                "month": "May"
+            },
+            {
+                "pageviews": "44",
+                "users": "21",
+                "year": "2020",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "34",
+                "users": "13",
+                "year": "2020",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "3",
+                "users": "2",
+                "year": "2020",
+                "month": "Aug"
+            }
+        ]
+    },
+    {
+        "name": "Orcestra",
+        "stats": [
+            {
+                "pageviews": "171",
+                "users": "19",
+                "year": "2020",
+                "month": "May"
+            },
+            {
+                "pageviews": "547",
+                "users": "29",
+                "year": "2020",
+                "month": "Jun"
+            },
+            {
+                "pageviews": "1530",
+                "users": "41",
+                "year": "2020",
+                "month": "Jul"
+            },
+            {
+                "pageviews": "35",
+                "users": "19",
+                "year": "2020",
+                "month": "Aug"
+            }
+        ]
+    }
+]

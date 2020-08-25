@@ -9,32 +9,41 @@ import pypistats
 from condastats.cli import overall, pkg_platform, pkg_version, pkg_python, data_source
 from google.cloud import bigquery
 
+# IMPORTANT: get updated software and webapp csvs from paul
 # BEFORE YOU RUN/WHEN SWITCHING VENVS:
-#
+# make sure dlStats.json has the most up-to-date data
+# 
 # > pip install requests 
 # > pip install --upgrade google-cloud-bigquery
-# > pip install pypistats
+# > pip install pypistats <- or python -m pip install pypistats
+# > pip install google-cloud-bigquery
 # IF WINDOWS: > choco install miniconda3 
 #               switch to miniconda venv in VSCode
 #             > conda install -c conda-forge condastats
 #               install the rest of the packages with pip
-# IF MAC:   install miniconda3, rest idk yet TODO: figure it out
+# IF MAC:   install anaconda
 #         > conda install -c conda-forge condastats
-# 
-# If you haven't already, follow this guide for GBQ: https://github.com/ofek/pypinfo
+#
+# If that doesn't work, switch to conda environment and only run anaconda stuff (comment out other code)
+# Switch back to python environment and run everything other than conda
+#
+# FOR PYPI: If you need another GBQ credentials file, follow this guide for GBQ: https://github.com/ofek/pypinfo
 ## up until step 10 (moving credential JSON file)
-# Follow this guide to set up the credentials in your PATH/env variable
+# IMPORTANT:
+# Follow this guide to set up the credentials in your PATH/env variable. Example: 
 ## https://cloud.google.com/bigquery/docs/reference/libraries
 # $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\chant\Documents\GitHub\download-stats-scripts\pypiv3-1b463de8d1b0.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="/Users/chantalho/Documents/GitHub/download-stats-scripts/pypiv3-1b463de8d1b0.json"
 #
 # Change the file path name based on OS
-### if Windows: \\software.csv
-### if Mac/Linux: /software.csv
+### if Windows: \\software.csv, \\dlStats.json
+### if Mac/Linux: /software.csv, /dlStats.json
+#
 
 ### UTILS ###
 # reads the software csv into a usable dict
 def readDownloadLinks():
-    path = "" + str(os.getcwd()) + "\\software.csv"
+    path = "" + str(os.getcwd()) + "/software.csv"
     with open(path, encoding="utf8") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
@@ -154,13 +163,13 @@ def getAnacData(name, year, month):
 
 if __name__ == "__main__":
     package_dict = readDownloadLinks()
-    year = datetime.datetime.today().year
-    month = datetime.datetime.today().month-1 #"%02Wd" % (datetime.datetime.today().month-1) 
+    year = datetime.datetime.today().year # 2020
+    month = datetime.datetime.today().month-1 # 6
 
     data = None
    
     # get json from data file
-    path = "" + str(os.getcwd()) + "\\dlStats.json"
+    path = "" + str(os.getcwd()) + "/dlStats.json"
     with open(path) as f:
         data = json.load(f)
 
@@ -172,17 +181,17 @@ if __name__ == "__main__":
             print("bioc")
             ret_data = getBiocData(name, year, month)
 
-        elif "cran" in package_dict[name]:
+        if "cran" in package_dict[name]:
             print("cran")
             ret_data = getCranData(name, year, month)
 
-        elif "pypi" in package_dict[name]:
+        if "pypi" in package_dict[name]:
             print("pypi")
             ret_data = getPypiData(name, year, month)
 
-        # WARNING: anaconda data for last month isn't updated until a couple days after
+        # WARNING: anaconda data for last month isn't updated until a few days after
         #          the first day of the month. Might give an error.
-        elif "anaconda" in package_dict[name]:
+        if "anaconda" in package_dict[name]:
             print("anac")
             ret_data = getAnacData(name, year, month)
 
@@ -192,21 +201,8 @@ if __name__ == "__main__":
         if ret_data != None:
             item["stats"].append(ret_data)
 
-    # changing format of data to [{name: CREAM, stats: [ {} , {} ....]} , {} , ...]
-    # because graphql likes that better
-    # f = open("data.json")
-    # data = json.load(f)
-    # f.close()
-    # new_data = []
-    # for key in data:
-    #     new_data.append({
-    #         'name': key,
-    #         'stats': data[key]
-    #     })
-    # new_data = makeAllStr(new_data)
-
     json_str = json.dumps(data)
-    f = open("new_data.json", "w")
+    f = open("new_data_temp2.json", "w")
     f.write(json_str)
     f.close()
     

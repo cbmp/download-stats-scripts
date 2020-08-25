@@ -5,18 +5,19 @@ import json
 
 # BEFORE YOU RUN/WHEN SWITCHING VENVS:
 #
-# 
-#
 # Change the file path name based on OS
 ### if Windows: \\software.csv
 ### if Mac/Linux: /software.csv
 
 # RUN for both software and webapps
 
+# At one point google scholar will block your IP from scraping
+# at that point you should probably create a proxy
+
 ### UTILS ###
 # reads the software csv into a usable dict
 def readNames():
-    path = '' + str(os.getcwd()) + '\\software.csv'
+    path = '' + str(os.getcwd()) + '/software.csv'
     with open(path, encoding='utf8') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
@@ -43,7 +44,7 @@ def getCitedBy(pdict):
     cited_by = {}
     for key in pdict:
         # if there is no google scholar link (then no cited by)
-        if pdict[key]['scholar_link'] == '' or pdict[key]['citation'] == '':
+        if pdict[key]['scholar_link'] == '-' or pdict[key]['citation'] == '-':
             cited_by[key] = {
                 'title': '',
                 'cited': 0,
@@ -62,7 +63,7 @@ def getCitedBy(pdict):
                         'title': item.bib['title'],
                         'cited': item.citedby
                     }
-                    print('Iteration done of', key, '-', item.bib['title'])
+                    print(item.citedby, 'citations:', 'Iteration done of', key, '-', item.bib['title'])
                 else:
                     cited_by[key] = {
                         'title': '',
