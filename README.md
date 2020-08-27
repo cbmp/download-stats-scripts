@@ -77,16 +77,24 @@ After you've ensured that it looks fine, replace `/results/dlStats.json` with th
 
 ### gaWebapps
 Collects Google Analytics stats for all webapps.
+
 **Output:** `/results/gaWebappsStats.json`
 #### Instructions
-No specific instructions other than to just run the script.
+```bash
+pip install --upgrade google-api-python-client 
+pip install --upgrade oauth2client
+```
 
 *** 
 
 ### gsCitedBy
 Collects Google Scholar cited by stats for all packages that have a citation.
+
 **Output:** `/results/gaWebappsStats.json`
 #### Instructions
+```bash
+pip install scholarly
+```
 Depending on if you're running it for software or web apps, you might need to replace the file names in the script. More instructions under **New webapp/software?** above.
 
 After a while, Google Scholar will block your IP because it doesn't allow scraping. More specifically, the package will start to produce an error saying `Exception: Cannot fetch the page from Google Scholar` which is a mighty helpful except that tells you absolutely nothing!
@@ -96,7 +104,8 @@ After a while, Google Scholar will block your IP because it doesn't allow scrapi
 *** 
 
 ### collabs
-Collects publication lists for each PI in the list. Data is formatted into intersections in CBMP's scripts.
+Collects publication lists for each PI in the list. Data is formatted into intersections in CBMP's scripts
+
 **Output:** `/results/collabStats.json`
 #### Instructions
 No specific instructions other than to just run the script.
