@@ -1,5 +1,6 @@
 # download-stats-scripts
- For scraping the download stats for packages from Bioconductor, CRAN, PyPI, Anaconda.
+For scraping the download stats for packages from Bioconductor, CRAN, PyPI, Anaconda.
+
 Painfully documented and written by Chantal, so if you have any questions, please ask her.
 
 ## Structure
@@ -52,6 +53,7 @@ Painfully documented and written by Chantal, so if you have any questions, pleas
 
 ### lastMonthDataCollection
 Collects a list of package names and their platforms from `/data/software.csv`, and then collects the number of downloads for the previous month and appends it to a master JSON file (`/results/dlStats.json`) of all downloads per month.
+
 **Output:** `/results/dlStats.json`
 #### Instructions
 Try installing everything on an **anaconda venv**.
@@ -69,6 +71,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="<YOUR_CURRENT_WORKING_DIRECTORY_PATH_HERE
 ```
 
 Right now, the script is set up so that the new data is written to `/misc/new_data.json`. This is to quickly look over all the new data and make sure it's correct.
+
 After you've ensured that it looks fine, replace `/results/dlStats.json` with the JSON from `new_data.json`.
 *** 
 
