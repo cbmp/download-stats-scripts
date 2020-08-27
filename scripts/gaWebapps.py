@@ -8,7 +8,7 @@ import json
 # pip install --upgrade oauth2client
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = 'ga-key-file.json'
+KEY_FILE_LOCATION = str(os.getcwd()) + '/credentials/ga-key-file.json'
 
 def initialize_analyticsreporting():
   """Initializes an Analytics Reporting API V4 service object.
@@ -65,6 +65,8 @@ def format_data(response, name):
 
 
 if __name__ == "__main__":
+    # add new webapps here, with their view ids from google analytics, and start dates
+    # of when to start recording data
     view_names = ['PharmacoDB', 'SYNERGxDB', 'ToxicoDB', 'XevaDB', 'Orcestra']
     view_ids = ['154809134', '217887541', '217861980', '217840729', '217856753']
     start_dates = ['2017-07-01', '2020-05-01', '2020-05-01', '2020-05-01', '2020-05-01']
@@ -75,6 +77,6 @@ if __name__ == "__main__":
         data.append(format_data(response, view_names[i])) 
 
     json_str = json.dumps(data)
-    f = open("gaWebappsStats.json", "w") 
+    f = open(str(os.getcwd()) + "/results/gaWebappsStats.json", "w") 
     f.write(json_str)
     f.close()

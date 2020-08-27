@@ -287,38 +287,38 @@ def getHistoricAnacData(name):
 
 
 if __name__ == "__main__":
-    # package_dict = readDownloadLinks()
-    # data = {}
-    # for name in package_dict:
-    #     if "bioconductor" in package_dict[name]:
-    #         # get data
-    #         ret_data = getHistoricBiocData(name)
-    #         data[name] = ret_data
+    package_dict = readDownloadLinks()
+    data = {}
+    for name in package_dict:
+        if "bioconductor" in package_dict[name]:
+            # get data
+            ret_data = getHistoricBiocData(name)
+            data[name] = ret_data
 
-    #     elif "cran" in package_dict[name]:
-    #         # getting start and end dates
-    #         start_year = 2005 #TODO: change based on paul getting the year of each package
-    #         ret = getStartEndDates(start_year)
-    #         start_dates = ret["start"]
-    #         end_dates = ret["end"]
-    #         ret_data = getHistoricCranData(name, start_dates, end_dates)
-    #         data[name] = ret_data
+        elif "cran" in package_dict[name]:
+            # getting start and end dates
+            start_year = 2005 #TODO: change based on paul getting the year of each package
+            ret = getStartEndDates(start_year)
+            start_dates = ret["start"]
+            end_dates = ret["end"]
+            ret_data = getHistoricCranData(name, start_dates, end_dates)
+            data[name] = ret_data
 
-    #     elif "pypi" in package_dict[name]:
-    #         # IMPORTANT: we are allowed 1TB of querying per month.
-    #         #           each query is about 475GB
-    #         #           best bet is to run the sql queries manually
-    #         #           in the gbq console
-    #         #           but this one _might_ get the data as well
-    #         # ret_data = getHistoricPypiData(name, start_dates, end_dates)
-    #         ret_data = getManualHistoricPypiData(name)
-    #         data[name] = ret_data
+        elif "pypi" in package_dict[name]:
+            # IMPORTANT: we are allowed 1TB of querying per month.
+            #           each query is about 475GB
+            #           best bet is to run the sql queries manually
+            #           in the gbq console
+            #           but this one _might_ get the data as well
+            # ret_data = getHistoricPypiData(name, start_dates, end_dates)
+            ret_data = getManualHistoricPypiData(name)
+            data[name] = ret_data
 
-    #     elif "anaconda" in package_dict[name]:
-    #         ret_data = getHistoricAnacData(name)
-    #         data[name] = ret_data
-    #     else:
-    #         data[name] = []
+        elif "anaconda" in package_dict[name]:
+            ret_data = getHistoricAnacData(name)
+            data[name] = ret_data
+        else:
+            data[name] = []
 
     # I'm running this once and commenting it out:
     # I accidentally didn't keep the types constant - some values int, some str
@@ -329,11 +329,11 @@ if __name__ == "__main__":
 
     # data = makeAllStr(json_data)
 
-    # # writing json to file
-    # json_str = json.dumps(data)
-    # f = open("new_data.json", "w") #historic_
-    # f.write(json_str)
-    # f.close()
+    # writing json to file
+    json_str = json.dumps(data)
+    f = open("new_data.json", "w") #historic_
+    f.write(json_str)
+    f.close()
 
     json_data = None
     with open("new_data.json") as f:

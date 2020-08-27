@@ -49,6 +49,6 @@ if __name__ == "__main__":
 
     data = getPublications(rawData)
     json_str = json.dumps(data)
-    f = open("collabStats.json", "w") 
+    f = open(str(os.getcwd()) + "/results/collabStats.json", "w") 
     f.write(json_str)
     f.close()

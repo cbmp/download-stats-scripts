@@ -17,7 +17,7 @@ import json
 ### UTILS ###
 # reads the software csv into a usable dict
 def readNames():
-    path = '' + str(os.getcwd()) + '/software.csv'
+    path = '' + str(os.getcwd()) + '/data/software.csv'
     with open(path, encoding='utf8') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
      # writing to file
     json_str = json.dumps(new_data)
-    f = open("gs_software_stats.json", "w") 
+    f = open("results/gsSoftwareStats.json", "w") 
     f.write(json_str)
     f.close()
     

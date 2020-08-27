@@ -32,8 +32,8 @@ from google.cloud import bigquery
 # IMPORTANT:
 # Follow this guide to set up the credentials in your PATH/env variable. Example: 
 ## https://cloud.google.com/bigquery/docs/reference/libraries
-# $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\chant\Documents\GitHub\download-stats-scripts\pypiv3-1b463de8d1b0.json"
-# export GOOGLE_APPLICATION_CREDENTIALS="/Users/chantalho/Documents/GitHub/download-stats-scripts/pypiv3-1b463de8d1b0.json"
+# WINDOWS: $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\chant\Documents\GitHub\download-stats-scripts\credentials\pypiv3-1b463de8d1b0.json"
+# MACOS: export GOOGLE_APPLICATION_CREDENTIALS="/Users/chantalho/Documents/GitHub/download-stats-scripts/credentials/pypiv3-1b463de8d1b0.json"
 #
 # Change the file path name based on OS
 ### if Windows: \\software.csv, \\dlStats.json
@@ -43,7 +43,7 @@ from google.cloud import bigquery
 ### UTILS ###
 # reads the software csv into a usable dict
 def readDownloadLinks():
-    path = "" + str(os.getcwd()) + "/software.csv"
+    path = "" + str(os.getcwd()) + "/data/software.csv"
     with open(path, encoding="utf8") as csv_file:
         csv_reader = csv.DictReader(csv_file)
         line_count = 0
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     data = None
    
     # get json from data file
-    path = "" + str(os.getcwd()) + "/dlStats.json"
+    path = "" + str(os.getcwd()) + "/results/dlStats.json"
     with open(path) as f:
         data = json.load(f)
 
@@ -202,7 +202,10 @@ if __name__ == "__main__":
             item["stats"].append(ret_data)
 
     json_str = json.dumps(data)
-    f = open("new_data_temp2.json", "w")
+
+    # put it into new_data.json first to make sure the data is ok
+    # and then copy it into /results/dlStats.json
+    f = open(str(os.getcwd()) + "/misc/new_data.json", "w")
     f.write(json_str)
     f.close()
     
